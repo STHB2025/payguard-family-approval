@@ -1,5 +1,5 @@
-🛡️ PayGuard
-Programmable Transaction Governance for High-Risk Payments
+# 🛡️ PayGuard  
+## Programmable Transaction Governance for High-Risk Payments
 
 PayGuard is a programmable trust layer that introduces human-in-the-loop approval workflows for high-risk digital banking transactions.
 
@@ -7,70 +7,91 @@ Instead of allowing risky payments to execute instantly, PayGuard evaluates tran
 
 Built around programmable banking concepts, PayGuard explores how financial institutions, families, and SMEs can add a new layer of trust and oversight to digital payments.
 
-🚨 The Problem
+---
+
+# 🚨 The Problem
 
 Digital payments are fast — but not always safe.
 
 Fraud, social engineering, mistaken transfers, and unauthorized payments continue to affect:
-
-Seniors and vulnerable users
-Families managing shared financial responsibilities
-SMEs handling supplier and staff payments
+- Seniors and vulnerable users
+- Families managing shared financial responsibilities
+- SMEs handling supplier and staff payments
 
 Most banking systems notify users after money has already moved.
 
 There is currently no lightweight system that allows trusted humans to intervene before transaction execution.
 
-💡 The Solution
+---
+
+# 💡 The Solution
 
 PayGuard introduces a programmable approval layer between:
 
-transaction intent → and → payment execution
+## transaction intent → payment execution
 
 When a payment is initiated, PayGuard:
-
-Evaluates transaction risk
-Detects unusual payment behaviour
-Requests approval from a trusted contact when required
-Approves or blocks the transaction in real time
-Maintains an auditable decision log
+1. Evaluates transaction risk
+2. Detects unusual payment behaviour
+3. Requests approval from a trusted contact when required
+4. Approves or blocks the transaction in real time
+5. Maintains an auditable decision log
 
 This creates a simple but powerful trust mechanism for digital banking workflows.
 
-🧠 Trust Decision Engine
+---
+
+# 🧠 Trust Decision Engine
 
 At the core of PayGuard is a lightweight risk-scoring system designed to simulate intelligent transaction governance.
 
-Example Risk Signals
-Signal	Risk Impact
-New beneficiary	+40
-High transaction amount	+30
-First-time payment pattern	+25
-Unusual transaction timing	+10
-Risk Classification
-Score	Outcome
-0–30	Auto-approved
-31–60	Notification triggered
-61–100	Approval required
+## Example Risk Signals
+
+| Signal | Risk Impact |
+|---|---|
+| New beneficiary | +40 |
+| High transaction amount | +30 |
+| First-time payment pattern | +25 |
+| Unusual transaction timing | +10 |
+
+## Risk Classification
+
+| Score | Outcome |
+|---|---|
+| 0–30 | Auto-approved |
+| 31–60 | Notification triggered |
+| 61–100 | Approval required |
 
 This transforms PayGuard from a simple payment workflow into a programmable transaction governance system.
 
-🔄 Demo Flow
-User initiates payment
-Transaction is analysed by the Trust Decision Engine
-High-risk payment is flagged
-Trusted contact receives approval request
-Payment is approved or blocked
-Dashboard updates in real time
-⚙️ Core Features
-⚠️ High-risk payment detection
-✅ Human approval workflow
-📊 Live transaction dashboard
-🧾 Payment history and audit log
-📱 WhatsApp-style approval simulation
-🇿🇦 Local-first UX with Rand currency support
-🔄 Real-time transaction status updates
-🏗️ System Architecture
+---
+
+# 🔄 Demo Flow
+
+1. User initiates payment
+2. Transaction is analysed by the Trust Decision Engine
+3. High-risk payment is flagged
+4. Trusted contact receives approval request
+5. Payment is approved or blocked
+6. Dashboard updates in real time
+
+---
+
+# ⚙️ Core Features
+
+- ⚠️ High-risk payment detection
+- ✅ Human approval workflow
+- 📊 Live transaction dashboard
+- 🧾 Payment history and audit log
+- 📱 WhatsApp-style approval simulation
+- 🇿🇦 Local-first UX with Rand currency support
+- 🔄 Real-time transaction status updates
+
+---
+
+# 🏗️ System Architecture
+
+```text
 User Interface (Frontend)
         ↓
 Transaction Capture Layer
@@ -82,6 +103,7 @@ Approval Workflow System
 Transaction Outcome
         ↓
 Audit & Dashboard Updates
+---
 
 🔌 Programmable Banking Concept
 
@@ -134,19 +156,21 @@ Real-time banking integrations
 AI-assisted anomaly detection
 Biometric verification layers
 Enterprise payment governance systems
+
 🛠️ Built With
 Node.js
 Express
 HTML / CSS / JavaScript
+
 Replit
 🎥 Live Prototype
 🌐 Demo Application
 
-PayGuard Live Demo
+https://pay-guard--BusinessTechHub.replit.app
 
 📂 GitHub Repository
 
-PayGuard GitHub Repository
+https://github.com/STHB2025/payguard-family-approval
 
 🧠 Why This Matters
 
@@ -159,3 +183,6 @@ As digital banking becomes increasingly automated, PayGuard demonstrates how hum
 📄 License
 
 MIT License
+
+
+
