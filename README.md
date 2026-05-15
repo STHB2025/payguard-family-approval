@@ -185,13 +185,15 @@ Future versions of PayGuard could support:
 # 📸 Screenshots
 
 ## Dashboard
-_Add dashboard screenshot here_
+_<img width="1471" height="596" alt="Dashboard" src="https://github.com/user-attachments/assets/2b56114c-f455-4e79-ba12-b9ad9d6e1cd8" />
+e_
 
 ## Payment Approval Flow
-_Add approval flow screenshot here_
+_<img width="1429" height="756" alt="Payment" src="https://github.com/user-attachments/assets/098cae47-5392-45b0-bc5f-29554f1ca76c" />
 
 ## Transaction History
-_Add transaction history screenshot here_
+_<img width="1490" height="872" alt="history" src="https://github.com/user-attachments/assets/9c6a360e-51ae-415d-9ff6-8bd1d57ce949" />
+_
 
 ---
 
