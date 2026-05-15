@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PayGuard - Transaction Governance</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="header-inner">
+        <div class="logo">
+          <span class="logo-icon">🛡️</span>
+          <div>
+            <h1>PayGuard</h1>
+            <p>Programmable Transaction Governance</p>
+          </div>
+        </div>
+        <nav class="nav">
+          <button class="nav-btn active" data-tab="dashboard">Dashboard</button>
+          <button class="nav-btn" data-tab="payment">New Payment</button>
+          <button class="nav-btn" data-tab="approvals">
+            Approvals
+            <span class="badge" id="approvals-badge" style="display:none">0</span>
+          </button>
+          <button class="nav-btn" data-tab="history">History</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+
+      <!-- DASHBOARD TAB -->
+      <section id="tab-dashboard" class="tab active">
+        <div class="page-header">
+          <h2>Dashboard</h2>
+          <p>Real-time transaction governance overview</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon approved">✅</div>
+            <div class="stat-info">
+              <span class="stat-value" id="stat-approved">0</span>
+              <span class="stat-label">Approved</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon blocked">🚫</div>
+            <div class="stat-info">
+              <span class="stat-value" id="stat-blocked">0</span>
+              <span class="stat-label">Blocked</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon pending">⏳</div>
+            <div class="stat-info">
+              <span class="stat-value" id="stat-pending">0</span>
+              <span class="stat-label">Pending Approval</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon total">📊</div>
+            <div class="stat-info">
+              <span class="stat-value" id="stat-total">0</span>
+              <span class="stat-label">Total Transactions</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <h3>Risk Engine</h3>
+            <div class="risk-table">
+              <div class="risk-row header">
+                <span>Risk Signal</span>
+                <span>Score Impact</span>
+              </div>
+              <div class="risk-row">
+                <span>New beneficiary</span>
+                <span class="badge-score high">+40</span>
+              </div>
+              <div class="risk-row">
+                <span>High transaction amount (&gt;R5,000)</span>
+                <span class="badge-score medium">+30</span>
+              </div>
+              <div class="risk-row">
+                <span>First-time payment pattern</span>
+                <span class="badge-score medium">+25</span>
+              </div>
+              <div class="risk-row">
+                <span>Unusual transaction timing</span>
+                <span class="badge-score low">+10</span>
+              </div>
+            </div>
+            <div class="risk-legend">
+              <div class="legend-item"><span class="dot green"></span> 0–30: Auto-approved</div>
+              <div class="legend-item"><span class="dot yellow"></span> 31–60: Notification triggered</div>
+              <div class="legend-item"><span class="dot red"></span> 61–100: Approval required</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Recent Activity</h3>
+            <div id="recent-activity" class="activity-list">
+              <div class="empty-state">No transactions yet. Initiate a payment to get started.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAYMENT TAB -->
+      <section id="tab-payment" class="tab">
+        <div class="page-header">
+          <h2>Initiate Payment</h2>
+          <p>Transaction will be evaluated by the Trust Decision Engine</p>
+        </div>
+
+        <div class="form-container">
+          <form id="payment-form" class="card form-card">
+            <div class="form-group">
+              <label>Recipient Name</label>
+              <input type="text" id="recipient" placeholder="e.g. John Smith" required />
+            </div>
+            <div class="form-group">
+              <label>Amount (ZAR)</label>
+              <div class="input-prefix">
+                <span>R</span>
+                <input type="number" id="amount" placeholder="0.00" min="1" step="0.01" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Reference</label>
+              <input type="text" id="reference" placeholder="e.g. Invoice #1234" required />
+            </div>
+            <div class="form-group checkboxes">
+              <label class="checkbox-label">
+                <input type="checkbox" id="isNewBeneficiary" />
+                <span>New beneficiary (never paid before)</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="isFirstPaymentPattern" />
+                <span>First-time payment pattern</span>
+              </label>
+            </div>
+
+            <div id="risk-preview" class="risk-preview" style="display:none">
+              <h4>Estimated Risk</h4>
+              <div class="risk-meter-wrap">
+                <div class="risk-meter">
+                  <div class="risk-fill" id="risk-fill"></div>
+                </div>
+                <span id="risk-score-label">0</span>
+              </div>
+              <p id="risk-outcome-label"></p>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit Payment</button>
+          </form>
+
+          <div id="payment-result" class="card result-card" style="display:none">
+            <div id="result-icon" class="result-icon"></div>
+            <h3 id="result-title"></h3>
+            <p id="result-message"></p>
+            <div id="result-details" class="result-details"></div>
+            <button class="btn btn-secondary" id="new-payment-btn">Make Another Payment</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- APPROVALS TAB -->
+      <section id="tab-approvals" class="tab">
+        <div class="page-header">
+          <h2>Pending Approvals</h2>
+          <p>Review and approve or block high-risk transactions</p>
+        </div>
+
+        <div id="approvals-list" class="approvals-list">
+          <div class="empty-state">No pending approvals. All transactions are resolved.</div>
+        </div>
+      </section>
+
+      <!-- HISTORY TAB -->
+      <section id="tab-history" class="tab">
+        <div class="page-header">
+          <h2>Transaction History</h2>
+          <p>Full audit log of all transactions</p>
+        </div>
+
+        <div class="card">
+          <div class="history-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="approved">Approved</button>
+            <button class="filter-btn" data-filter="blocked">Blocked</button>
+            <button class="filter-btn" data-filter="pending">Pending</button>
+          </div>
+          <div id="history-table-wrap">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Recipient</th>
+                  <th>Amount</th>
+                  <th>Reference</th>
+                  <th>Risk Score</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="history-tbody">
+                <tr><td colspan="6" class="empty-state">No transactions yet.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div id="toast" class="toast" style="display:none"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
