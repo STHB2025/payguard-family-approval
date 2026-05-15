@@ -190,6 +190,7 @@ e_
 
 ## Payment Approval Flow
 _<img width="1429" height="756" alt="Payment" src="https://github.com/user-attachments/assets/098cae47-5392-45b0-bc5f-29554f1ca76c" />
+-<img width="1447" height="855" alt="Approved" src="https://github.com/user-attachments/assets/0c1495ce-50ad-4677-b7f0-b82bf479a8b7" />
 
 ## Transaction History
 _<img width="1490" height="872" alt="history" src="https://github.com/user-attachments/assets/9c6a360e-51ae-415d-9ff6-8bd1d57ce949" />
