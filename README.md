@@ -11,11 +11,25 @@ Built around programmable banking concepts, PayGuard explores how financial inst
 
 ---
 
-# 🚀 Live Demo
+# 🚀 Live Prototype
 
-🌐 https://pay-guard--BusinessTechHub.replit.app
+## 🌐 Demo Application
 
-📂 https://github.com/STHB2025/payguard-family-approval
+https://pay-guard--BusinessTechHub.replit.app
+
+---
+
+# 🎥 Demo Video
+
+## 📹 Loom Walkthrough
+
+_Add Loom demo link here_
+
+---
+
+# 📂 GitHub Repository
+
+https://github.com/STHB2025/payguard-family-approval
 
 ---
 
