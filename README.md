@@ -23,7 +23,7 @@ https://pay-guard--BusinessTechHub.replit.app
 
 ## 📹 Loom Walkthrough
 
-_Add Loom demo link here_
+https://www.loom.com/share/4fee585a9d584b86a3d8f26428533035
 
 ---
 
