@@ -93,18 +93,14 @@ It explores how trust and human verification can become part of digital financia
 
 # 📸 Screenshots
 
-_Add screenshots here before submission._
-
-Recommended screenshots:
-- Dashboard
-- WhatsApp approval flow
-- Payment history
+<img width="1429" height="756" alt="Payment" src="https://github.com/user-attachments/assets/3f11e2eb-37fe-4456-bd44-01cd25d1c5e7" />
+<img width="1445" height="861" alt="Overview 1" src="https://github.com/user-attachments/assets/db622f22-86a3-4d4d-b86b-fbad500b413b" />
+<img width="1490" height="872" alt="history" src="https://github.com/user-attachments/assets/93c49c61-4c50-4d9a-90fb-20a419a19811" />
+<img width="1447" height="855" alt="Approved" src="https://github.com/user-attachments/assets/4fca8b50-2058-4294-b107-2c27f8f5b60b" />
 
 ---
 
 # 🎥 Demo Video
-
-_Add Loom or demo video link here._
 
 ---
 
